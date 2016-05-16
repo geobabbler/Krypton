@@ -33,7 +33,6 @@ namespace ComponentFactory.Krypton.Ribbon
     [Designer("ComponentFactory.Krypton.Ribbon.KryptonGalleryDesigner, ComponentFactory.Krypton.Design, Version=4.4.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e")]
     [DesignerCategory("code")]
     [Description("Select from a group of possible images.")]
-    [LicenseProvider(typeof(EncryptedLicenseProvider))]
     [ClassInterface(ClassInterfaceType.AutoDispatch)]
     [ComVisible(true)]
     public class KryptonGallery : VisualSimpleBase

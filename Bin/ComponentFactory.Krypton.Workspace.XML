@@ -4,115 +4,221 @@
         <name>ComponentFactory.Krypton.Workspace</name>
     </assembly>
     <members>
-        <member name="T:ComponentFactory.Krypton.Workspace.KryptonWorkspaceSequenceConverter">
+        <member name="T:ComponentFactory.Krypton.Workspace.Properties.Resources">
             <summary>
-            Add conversion to a string for display in properties window at design time.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceSequenceConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.ResourceManager">
             <summary>
-            Returns whether this converter can convert the object to the specified type.
-            </summary>
-            <param name="context">An ITypeDescriptorContext that provides a format context.</param>
-            <param name="destinationType">A Type that represents the type you want to convert to.</param>
-            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceSequenceConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
-            <summary>
-            Converts the given value object to the specified type, using the specified context and culture information.
-            </summary>
-            <param name="context">An ITypeDescriptorContext that provides a format context.</param>
-            <param name="culture">A CultureInfo. If a null reference (Nothing in Visual Basic) is passed, the current culture is assumed.</param>
-            <param name="value">The Object to convert.</param>
-            <param name="destinationType">The Type to convert the value parameter to.</param>
-            <returns>An Object that represents the converted value.</returns>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection">
-            <summary>
-            Collection of workspace items.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspaceSequence)">
+        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.Culture">
             <summary>
-            Initialize a new instance of the KryptonWorkspaceCollection class.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
-            <param name="sequence">Reference to the owning sequence.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.ToString">
+        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.add">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.arrow_down_blue">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.arrow_up_blue">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.CF_Logo">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.check2">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.delete2">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.help2">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator">
+            <summary>
+            Workspace specific separator that works relative to a specific workspace item.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Workspace.IWorkspaceItem,System.Windows.Forms.Orientation)">
+            <summary>
+            Initialize a new instance of the ViewDrawWorkspaceSeparator class.
+            </summary>
+            <param name="workspace">Associated workspace instance.</param>
+            <param name="workspaceItem">Associated workspace item.</param>
+            <param name="orientation">Visual orientation of the content.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.ToString">
             <summary>
             Obtains the String representation of this instance.
             </summary>
             <returns>User readable name of the instance.</returns>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnInserted(ComponentFactory.Krypton.Toolkit.TypedCollectionEventArgs{System.ComponentModel.Component})">
+        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorMoving(System.Drawing.Point,System.Drawing.Point)">
             <summary>
-            Raises the Inserted event.
+            Indicates the separator is moving.
             </summary>
-            <param name="e">A TypedCollectionEventArgs instance containing event data.</param>
+            <param name="mouse">Current mouse position in client area.</param>
+            <param name="splitter">Current position of the splitter.</param>
+            <returns>True if movement should be cancelled; otherwise false.</returns>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnRemoved(ComponentFactory.Krypton.Toolkit.TypedCollectionEventArgs{System.ComponentModel.Component})">
+        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorMoved(System.Drawing.Point,System.Drawing.Point)">
             <summary>
-            Raises the Removed event.
+            Indicates the separator has finished and been moved.
             </summary>
-            <param name="e">A TypedCollectionEventArgs instance containing event data.</param>
+            <param name="mouse">Current mouse position in client area.</param>
+            <param name="splitter">Current position of the splitter.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnClearing(System.EventArgs)">
+        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorNotMoved">
             <summary>
-            Raises the Clearing event.
-            </summary>
-            <param name="e">An EventArgs instance containing event data.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnCleared(System.EventArgs)">
-            <summary>
-            Raises the Cleared event.
-            </summary>
-            <param name="e">An EventArgs instance containing event data.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            Handle a change in a child item.
-            </summary>
-            <param name="sender">Source of the event.</param>
-            <param name="e">Event arguments associated with the event.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnChildMaximizeRestoreClicked(System.Object,System.EventArgs)">
-            <summary>
-            Handle a maximize/restore request from a child item.
-            </summary>
-            <param name="sender">Source of the event.</param>
-            <param name="e">Event arguments associated with the event.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnPropertyChanged(System.String)">
-            <summary>
-            Raises the PropertyChanged event.
-            </summary>
-            <param name="property">Name of the property that has changed.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            Raises the PropertyChanged event.
-            </summary>
-            <param name="e">Event arguments associated with the event.</param>
-        </member>
-        <member name="E:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.PropertyChanged">
-            <summary>
-            Occurs after a change has occured to the collection.
+            Indicates the separator has not been moved.
             </summary>
         </member>
-        <member name="E:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.MaximizeRestoreClicked">
+        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.WorkspaceItem">
             <summary>
-            Occurs when the user clicks the maximize/restore button.
+            Gets the associated workspace item instance.
             </summary>
         </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.RestrictTypes">
+        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorControl">
             <summary>
-            Gets an array of types that the collection is restricted to contain.
+            Gets the top level control of the source.
             </summary>
         </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.ContainsVisibleCell">
+        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorOrientation">
             <summary>
-            Gets a value indicating if the collection or child collections contains a cell instance.
+            Gets the orientation of the separator.
             </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorCanMove">
+            <summary>
+            Can the separator be moved by the user.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorIncrements">
+            <summary>
+            Gets the amount the splitter can be incremented.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorMoveBox">
+            <summary>
+            Gets the box representing the minimum and maximum allowed splitter movement.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.ActiveCellChangedEventArgs">
+            <summary>
+            Data associated with a change in the active cell.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.ActiveCellChangedEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell,ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell)">
+            <summary>
+            Initialize a new instance of the ActiveCellChangedEventArgs class.
+            </summary>
+            <param name="oldCell">Previous active cell value.</param>
+            <param name="newCell">New active cell value.</param>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.ActiveCellChangedEventArgs.OldCell">
+            <summary>
+            Gets the old cell reference.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.ActiveCellChangedEventArgs.NewCell">
+            <summary>
+            Gets the new cell reference.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer">
+            <summary>
+            Target a transfer to the target workspace cell.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.DragTargetWorkspace">
+            <summary>
+            Target within the workspace.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspace.#ctor(System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Rectangle,ComponentFactory.Krypton.Navigator.DragTargetHint,ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Navigator.KryptonPageFlags)">
+            <summary>
+            Initialize a new instance of the DragTargetWorkspace class.
+            </summary>
+            <param name="screenRect">Rectangle for screen area.</param>
+            <param name="hotRect">Rectangle for hot area.</param>
+            <param name="drawRect">Rectangle for draw area.</param>
+            <param name="hint">Target hint which should be one of the edges.</param>
+            <param name="workspace">Control instance for drop.</param>
+            <param name="allowFlags">Only drop pages that have one of these flags defined.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspace.Dispose(System.Boolean)">
+            <summary>
+            Release unmanaged and optionally managed resources.
+            </summary>
+            <param name="disposing">Called from Dispose method.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspace.ProcessDragEndData(ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell,ComponentFactory.Krypton.Navigator.PageDragEndData)">
+            <summary>
+            Process the drag pages in the context of a target navigator.
+            </summary>
+            <param name="workspace">Target workspace instance.</param>
+            <param name="target">Target workspace cell instance.</param>
+            <param name="data">Dragged page data.</param>
+            <returns>Last page to be transferred.</returns>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.DragTargetWorkspace.Workspace">
+            <summary>
+            Gets the target workspace control.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer.#ctor(System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Rectangle,ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell,ComponentFactory.Krypton.Navigator.KryptonPageFlags)">
+            <summary>
+            Initialize a new instance of the DragTargetWorkspaceCellTransfer class.
+            </summary>
+            <param name="screenRect">Rectangle for screen area.</param>
+            <param name="hotRect">Rectangle for hot area.</param>
+            <param name="drawRect">Rectangle for draw area.</param>
+            <param name="workspace">Control instance for drop.</param>
+            <param name="cell">Workspace cell as target for drop.</param>
+            <param name="allowFlags">Only drop pages that have one of these flags defined.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer.Dispose(System.Boolean)">
+            <summary>
+            Release unmanaged and optionally managed resources.
+            </summary>
+            <param name="disposing">Called from Dispose method.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer.IsMatch(System.Drawing.Point,ComponentFactory.Krypton.Navigator.PageDragEndData)">
+            <summary>
+            Is this target a match for the provided screen position.
+            </summary>
+            <param name="screenPt">Position in screen coordinates.</param>
+            <param name="dragEndData">Data to be dropped at destination.</param>
+            <returns>True if a match; otherwise false.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer.PerformDrop(System.Drawing.Point,ComponentFactory.Krypton.Navigator.PageDragEndData)">
+            <summary>
+            Perform the drop action associated with the target.
+            </summary>
+            <param name="screenPt">Position in screen coordinates.</param>
+            <param name="data">Data to pass to the target to process drop.</param>
+            <returns>Drop was performed and the source can perform any removal of pages as required.</returns>
         </member>
         <member name="T:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell">
             <summary>
@@ -393,6 +499,168 @@
         <member name="T:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCellList">
             <summary>
             Manages a list of KryptonWorkspaceCell instances.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.StarNumber">
+            <summary>
+            Handle a star number which consists of a number with optional asterisk at the end.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.StarNumber.#ctor">
+            <summary>
+            Initialize a new instance of the StarNumber class.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.StarNumber.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of the StarNumber class.
+            </summary>
+            <param name="value">Initial value to process.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.StarNumber.ToString">
+            <summary>
+            Gets a string representing the value of the instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.StarNumber.Value">
+            <summary>
+            Gets and sets the star notation and breaks it apart.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.StarNumber.UsingStar">
+            <summary>
+            Gets a value indicating if stars are being specified.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.StarNumber.FixedSize">
+            <summary>
+            Gets the fixed size value.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.StarNumber.StarSize">
+            <summary>
+            Gets the star size value.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.StarSize">
+            <summary>
+            A size where the width and height are in star notation.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.StarSize.#ctor">
+            <summary>
+            Initialize a new instance of the StarSize class.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.StarSize.#ctor(System.String)">
+            <summary>
+            Initialize a new instance of the StarSize class.
+            </summary>
+            <param name="starSize">Initial star sizing value.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.StarSize.ToString">
+            <summary>
+            Gets a string representing the value of the instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.StarSize.Value">
+            <summary>
+            Gets and sets the star notation and breaks it apart.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.StarSize.StarWidth">
+            <summary>
+            Gets the star number for the width.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.StarSize.StarHeight">
+            <summary>
+            Gets the star number for the height.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.KryptonWorkspaceSequenceConverter">
+            <summary>
+            Add conversion to a string for display in properties window at design time.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceSequenceConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether this converter can convert the object to the specified type.
+            </summary>
+            <param name="context">An ITypeDescriptorContext that provides a format context.</param>
+            <param name="destinationType">A Type that represents the type you want to convert to.</param>
+            <returns>true if this converter can perform the conversion; otherwise, false.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceSequenceConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts the given value object to the specified type, using the specified context and culture information.
+            </summary>
+            <param name="context">An ITypeDescriptorContext that provides a format context.</param>
+            <param name="culture">A CultureInfo. If a null reference (Nothing in Visual Basic) is passed, the current culture is assumed.</param>
+            <param name="value">The Object to convert.</param>
+            <param name="destinationType">The Type to convert the value parameter to.</param>
+            <returns>An Object that represents the converted value.</returns>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.WorkspaceCellEventArgs">
+            <summary>
+            Workspace cell event data.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceCellEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell)">
+            <summary>
+            Initialize a new instance of the WorkspaceCellEventArgs class.
+            </summary>
+            <param name="cell">Workspace cell associated with the event.</param>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceCellEventArgs.Cell">
+            <summary>
+            Gets the cell reference.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.XmlSavingEventArgs">
+            <summary>
+            Event data for persisting extra data for a workspace.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.XmlSavingEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,System.Xml.XmlWriter)">
+            <summary>
+            Initialize a new instance of the XmlSavingEventArgs class.
+            </summary>
+            <param name="workspace">Reference to owning workspace control.</param>
+            <param name="xmlWriter">Xml writer for persisting custom data.</param>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.XmlSavingEventArgs.Workspace">
+            <summary>
+            Gets the workspace reference.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.XmlSavingEventArgs.XmlWriter">
+            <summary>
+            Gets the xml writer.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.PagesUnmatchedEventArgs">
+            <summary>
+            Event data for listing pages unmatched during the load process.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.PagesUnmatchedEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,System.Collections.Generic.List{ComponentFactory.Krypton.Navigator.KryptonPage})">
+            <summary>
+            Initialize a new instance of the PagesUnmatchedEventArgs class.
+            </summary>
+            <param name="workspace">Reference to owning workspace control.</param>
+            <param name="unmatched">List of pages unmatched during the load process.</param>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.PagesUnmatchedEventArgs.Workspace">
+            <summary>
+            Gets the workspace reference.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.PagesUnmatchedEventArgs.Unmatched">
+            <summary>
+            Gets the xml reader.
             </summary>
         </member>
         <member name="T:ComponentFactory.Krypton.Workspace.KryptonWorkspaceSequence">
@@ -1422,79 +1690,316 @@
         <member name="F:ComponentFactory.Krypton.Workspace.KryptonWorkspace.LayoutInfo.DisplaySpace">
             <summary>Space allocated for item.</summary>
         </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.DragTargetWorkspace">
+        <member name="T:ComponentFactory.Krypton.Workspace.WorkspaceMenus">
             <summary>
-            Target within the workspace.
+            Storage for workspace context menu for pages.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspace.#ctor(System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Rectangle,ComponentFactory.Krypton.Navigator.DragTargetHint,ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Navigator.KryptonPageFlags)">
+        <member name="T:ComponentFactory.Krypton.Workspace.WorkspacePageMenuBase">
             <summary>
-            Initialize a new instance of the DragTargetWorkspace class.
-            </summary>
-            <param name="screenRect">Rectangle for screen area.</param>
-            <param name="hotRect">Rectangle for hot area.</param>
-            <param name="drawRect">Rectangle for draw area.</param>
-            <param name="hint">Target hint which should be one of the edges.</param>
-            <param name="workspace">Control instance for drop.</param>
-            <param name="allowFlags">Only drop pages that have one of these flags defined.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspace.Dispose(System.Boolean)">
-            <summary>
-            Release unmanaged and optionally managed resources.
-            </summary>
-            <param name="disposing">Called from Dispose method.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspace.ProcessDragEndData(ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell,ComponentFactory.Krypton.Navigator.PageDragEndData)">
-            <summary>
-            Process the drag pages in the context of a target navigator.
-            </summary>
-            <param name="workspace">Target workspace instance.</param>
-            <param name="target">Target workspace cell instance.</param>
-            <param name="data">Dragged page data.</param>
-            <returns>Last page to be transferred.</returns>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.DragTargetWorkspace.Workspace">
-            <summary>
-            Gets the target workspace control.
+            Storage for workspace context menu for pages.
             </summary>
         </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer">
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspacePageMenuBase.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace)">
             <summary>
-            Target a transfer to the target workspace cell.
+            Initialize a new instance of the WorkspacePageMenuBase class.
+            </summary>
+            <param name="workspace">Reference to owning workspace.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace)">
+            <summary>
+            Initialize a new instance of the WorkspaceMenus class.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer.#ctor(System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Rectangle,ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell,ComponentFactory.Krypton.Navigator.KryptonPageFlags)">
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextClose">
             <summary>
-            Initialize a new instance of the DragTargetWorkspaceCellTransfer class.
+            Resets the TextClose property to its default value.
             </summary>
-            <param name="screenRect">Rectangle for screen area.</param>
-            <param name="hotRect">Rectangle for hot area.</param>
-            <param name="drawRect">Rectangle for draw area.</param>
-            <param name="workspace">Control instance for drop.</param>
-            <param name="cell">Workspace cell as target for drop.</param>
-            <param name="allowFlags">Only drop pages that have one of these flags defined.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer.Dispose(System.Boolean)">
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextCloseAllButThis">
             <summary>
-            Release unmanaged and optionally managed resources.
+            Resets the TextCloseAllButThis property to its default value.
             </summary>
-            <param name="disposing">Called from Dispose method.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer.IsMatch(System.Drawing.Point,ComponentFactory.Krypton.Navigator.PageDragEndData)">
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextMoveNext">
             <summary>
-            Is this target a match for the provided screen position.
+            Resets the TextMoveNext property to its default value.
             </summary>
-            <param name="screenPt">Position in screen coordinates.</param>
-            <param name="dragEndData">Data to be dropped at destination.</param>
-            <returns>True if a match; otherwise false.</returns>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellTransfer.PerformDrop(System.Drawing.Point,ComponentFactory.Krypton.Navigator.PageDragEndData)">
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextMovePrevious">
             <summary>
-            Perform the drop action associated with the target.
+            Resets the TextMovePrevious property to its default value.
             </summary>
-            <param name="screenPt">Position in screen coordinates.</param>
-            <param name="data">Data to pass to the target to process drop.</param>
-            <returns>Drop was performed and the source can perform any removal of pages as required.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextSplitVertical">
+            <summary>
+            Resets the TextSplitVertical property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextSplitHorizontal">
+            <summary>
+            Resets the TextSplitHorizontal property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextRebalance">
+            <summary>
+            Resets the TextRebalance property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextMaximize">
+            <summary>
+            Resets the TextMaximize property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextRestore">
+            <summary>
+            Resets the TextRestore property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutClose">
+            <summary>
+            Decide if the shortcut for closing the current page.
+            </summary>
+            <returns>True if value should be serialized.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutClose">
+            <summary>
+            Resets the ShortcutClose property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutCloseAllButThis">
+            <summary>
+            Decide if the shortcut for 'close all but this' page.
+            </summary>
+            <returns>True if value should be serialized.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutCloseAllButThis">
+            <summary>
+            Resets the ShortcutCloseAllButThis property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutMoveNext">
+            <summary>
+            Decide if the shortcut for moving the current page to the next cell.
+            </summary>
+            <returns>True if value should be serialized.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutMoveNext">
+            <summary>
+            Resets the ShortcutMoveNext property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutMovePrevious">
+            <summary>
+            Decide if the shortcut for moving the current page to the previous cell.
+            </summary>
+            <returns>True if value should be serialized.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutMovePrevious">
+            <summary>
+            Resets the ShortcutMovePrevious property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutSplitVertical">
+            <summary>
+            Decide if the shortcut for splitting the current page into a vertical aligned page.
+            </summary>
+            <returns>True if value should be serialized.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutSplitVertical">
+            <summary>
+            Resets the ShortcutSplitVertical property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutSplitHorizontal">
+            <summary>
+            Decide if the shortcut for splitting the current page into a horizontal aligned page.
+            </summary>
+            <returns>True if value should be serialized.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutSplitHorizontal">
+            <summary>
+            Resets the ShortcutSplitHorizontal property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutRebalance">
+            <summary>
+            Decide if the shortcut for rebalancing the layout.
+            </summary>
+            <returns>True if value should be serialized.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutRebalance">
+            <summary>
+            Resets the ShortcutRebalance property to its default value.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutMaximizeRestore">
+            <summary>
+            Decide if the shortcut for maximizing/restoring the layout.
+            </summary>
+            <returns>True if value should be serialized.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutMaximizeRestore">
+            <summary>
+            Resets the ShortcutMaximizeRestore property to its default value.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.IsDefault">
+            <summary>
+            Gets a value indicating if all values are default.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextClose">
+            <summary>
+            Gets and sets the text to use for the close context menu item.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextCloseAllButThis">
+            <summary>
+            Gets and sets the text to use for the 'close all but this' context menu item.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextMoveNext">
+            <summary>
+            Gets and sets the text to use for the move next context menu item.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextMovePrevious">
+            <summary>
+            Gets and sets the text to use for the move previous context menu item.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextSplitVertical">
+            <summary>
+            Gets and sets the text to use for the split vertical context menu item.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextSplitHorizontal">
+            <summary>
+            Gets and sets the text to use for the split horizontal context menu item.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextRebalance">
+            <summary>
+            Gets and sets the text to use for the rebalance context menu item.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextMaximize">
+            <summary>
+            Gets and sets the text to use for the maximize context menu item.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextRestore">
+            <summary>
+            Gets and sets the text to use for the restore context menu item.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutClose">
+            <summary>
+            Gets and sets the shortcut for closing the current page.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutCloseAllButThis">
+            <summary>
+            Gets and sets the shortcut for 'close all but this' page.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutMoveNext">
+            <summary>
+            Gets and sets the shortcut for moving the current page to the next cell.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutMovePrevious">
+            <summary>
+            Gets and sets the shortcut for moving the current page to the previous cell.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutSplitVertical">
+            <summary>
+            Gets and sets the shortcut for splitting the current page into a vertical aligned page.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutSplitHorizontal">
+            <summary>
+            Gets and sets the shortcut for splitting the current page into a horizontal aligned page.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutRebalance">
+            <summary>
+            Gets and sets the shortcut for rebalancing the layout.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutMaximizeRestore">
+            <summary>
+            Gets and sets the shortcut for maximizing/restoring the layout.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShowContextMenu">
+            <summary>
+            Gets and sets if a workspace context menu is shown on tab right clicking.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.PageLoadingEventArgs">
+            <summary>
+            Event data for persisting extra data for a workspace cell page.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.XmlLoadingEventArgs">
+            <summary>
+            Event data for persisting extra data for a workspace.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.XmlLoadingEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,System.Xml.XmlReader)">
+            <summary>
+            Initialize a new instance of the XmlLoadingEventArgs class.
+            </summary>
+            <param name="workspace">Reference to owning workspace control.</param>
+            <param name="xmlReading">Xml reader for persisting custom data.</param>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.XmlLoadingEventArgs.Workspace">
+            <summary>
+            Gets the workspace reference.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.XmlLoadingEventArgs.XmlReader">
+            <summary>
+            Gets the xml reader.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.PageLoadingEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Navigator.KryptonPage,System.Xml.XmlReader)">
+            <summary>
+            Initialize a new instance of the PageLoadingEventArgs class.
+            </summary>
+            <param name="workspace">Reference to owning workspace control.</param>
+            <param name="page">Reference to owning workspace cell page.</param>
+            <param name="xmlReader">Xml reader for persisting custom data.</param>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.PageLoadingEventArgs.Page">
+            <summary>
+            Gets the workspace cell page reference.
+            </summary>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.ActivePageChangedEventArgs">
+            <summary>
+            Data associated with a change in the active page.
+            </summary>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.ActivePageChangedEventArgs.#ctor(ComponentFactory.Krypton.Navigator.KryptonPage,ComponentFactory.Krypton.Navigator.KryptonPage)">
+            <summary>
+            Initialize a new instance of the ActivePageChangedEventArgs class.
+            </summary>
+            <param name="oldPage">Previous active page value.</param>
+            <param name="newPage">New active page value.</param>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.ActivePageChangedEventArgs.OldPage">
+            <summary>
+            Gets the old page reference.
+            </summary>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.ActivePageChangedEventArgs.NewPage">
+            <summary>
+            Gets the new page reference.
+            </summary>
         </member>
         <member name="T:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellEdge">
             <summary>
@@ -1567,370 +2072,6 @@
         <member name="P:ComponentFactory.Krypton.Workspace.DragTargetWorkspaceCellEdge.Cell">
             <summary>
             Gets the target workspace cell.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.CellDragCancelEventArgs">
-            <summary>
-            Details for an cancellable event that provides pages and cell associated with a page dragging event.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.CellDragCancelEventArgs.#ctor(System.Drawing.Point,System.Drawing.Point,System.Windows.Forms.Control,ComponentFactory.Krypton.Navigator.KryptonPage[],ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell)">
-            <summary>
-            Initialize a new instance of the CellDragCancelEventArgs class.
-            </summary>
-            <param name="screenPoint">Screen point of the mouse.</param>
-            <param name="screenOffset">Screen offset of the mouse to the source element.</param>
-            <param name="c">Control that started the drag operation.</param>
-            <param name="pages">Array of event associated pages.</param>
-            <param name="cell">Workspace cell associated with pages.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.CellDragCancelEventArgs.#ctor(ComponentFactory.Krypton.Navigator.PageDragCancelEventArgs,ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell)">
-            <summary>
-            Initialize a new instance of the CellDragCancelEventArgs class.
-            </summary>
-            <param name="e">Event to upgrade to this event.</param>
-            <param name="cell">Workspace cell associated with pages.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.CellDragCancelEventArgs.Cell">
-            <summary>
-            Gets access to associated workspace cell.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.ActiveCellChangedEventArgs">
-            <summary>
-            Data associated with a change in the active cell.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.ActiveCellChangedEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell,ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell)">
-            <summary>
-            Initialize a new instance of the ActiveCellChangedEventArgs class.
-            </summary>
-            <param name="oldCell">Previous active cell value.</param>
-            <param name="newCell">New active cell value.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ActiveCellChangedEventArgs.OldCell">
-            <summary>
-            Gets the old cell reference.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ActiveCellChangedEventArgs.NewCell">
-            <summary>
-            Gets the new cell reference.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.ActivePageChangedEventArgs">
-            <summary>
-            Data associated with a change in the active page.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.ActivePageChangedEventArgs.#ctor(ComponentFactory.Krypton.Navigator.KryptonPage,ComponentFactory.Krypton.Navigator.KryptonPage)">
-            <summary>
-            Initialize a new instance of the ActivePageChangedEventArgs class.
-            </summary>
-            <param name="oldPage">Previous active page value.</param>
-            <param name="newPage">New active page value.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ActivePageChangedEventArgs.OldPage">
-            <summary>
-            Gets the old page reference.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ActivePageChangedEventArgs.NewPage">
-            <summary>
-            Gets the new page reference.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.PagesUnmatchedEventArgs">
-            <summary>
-            Event data for listing pages unmatched during the load process.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.PagesUnmatchedEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,System.Collections.Generic.List{ComponentFactory.Krypton.Navigator.KryptonPage})">
-            <summary>
-            Initialize a new instance of the PagesUnmatchedEventArgs class.
-            </summary>
-            <param name="workspace">Reference to owning workspace control.</param>
-            <param name="unmatched">List of pages unmatched during the load process.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.PagesUnmatchedEventArgs.Workspace">
-            <summary>
-            Gets the workspace reference.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.PagesUnmatchedEventArgs.Unmatched">
-            <summary>
-            Gets the xml reader.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.PageLoadingEventArgs">
-            <summary>
-            Event data for persisting extra data for a workspace cell page.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.XmlLoadingEventArgs">
-            <summary>
-            Event data for persisting extra data for a workspace.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.XmlLoadingEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,System.Xml.XmlReader)">
-            <summary>
-            Initialize a new instance of the XmlLoadingEventArgs class.
-            </summary>
-            <param name="workspace">Reference to owning workspace control.</param>
-            <param name="xmlReading">Xml reader for persisting custom data.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.XmlLoadingEventArgs.Workspace">
-            <summary>
-            Gets the workspace reference.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.XmlLoadingEventArgs.XmlReader">
-            <summary>
-            Gets the xml reader.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.PageLoadingEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Navigator.KryptonPage,System.Xml.XmlReader)">
-            <summary>
-            Initialize a new instance of the PageLoadingEventArgs class.
-            </summary>
-            <param name="workspace">Reference to owning workspace control.</param>
-            <param name="page">Reference to owning workspace cell page.</param>
-            <param name="xmlReader">Xml reader for persisting custom data.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.PageLoadingEventArgs.Page">
-            <summary>
-            Gets the workspace cell page reference.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.PageSavingEventArgs">
-            <summary>
-            Event data for persisting extra data for a workspace cell page.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.XmlSavingEventArgs">
-            <summary>
-            Event data for persisting extra data for a workspace.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.XmlSavingEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,System.Xml.XmlWriter)">
-            <summary>
-            Initialize a new instance of the XmlSavingEventArgs class.
-            </summary>
-            <param name="workspace">Reference to owning workspace control.</param>
-            <param name="xmlWriter">Xml writer for persisting custom data.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.XmlSavingEventArgs.Workspace">
-            <summary>
-            Gets the workspace reference.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.XmlSavingEventArgs.XmlWriter">
-            <summary>
-            Gets the xml writer.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.PageSavingEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Navigator.KryptonPage,System.Xml.XmlWriter)">
-            <summary>
-            Initialize a new instance of the PageSavingEventArgs class.
-            </summary>
-            <param name="workspace">Reference to owning workspace control.</param>
-            <param name="page">Reference to owning workspace cell page.</param>
-            <param name="xmlWriter">Xml writer for persisting custom data.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.PageSavingEventArgs.Page">
-            <summary>
-            Gets the workspace cell page reference.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.RecreateLoadingPageEventArgs">
-            <summary>
-            Event arguments for events that need to request a KryptonPage from a provided unique name.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.RecreateLoadingPageEventArgs.#ctor(System.String)">
-            <summary>
-            Initialize a new instance of the RecreateLoadingPageEventArgs class.
-            </summary>
-            <param name="uniqueName">Unique name of the page that needs creating.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.RecreateLoadingPageEventArgs.Page">
-            <summary>
-            Gets and sets the page to be used for the requested unique name.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.RecreateLoadingPageEventArgs.UniqueName">
-            <summary>
-            Gets the unique name of the page requested to be recreated.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.WorkspaceCellEventArgs">
-            <summary>
-            Workspace cell event data.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceCellEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell)">
-            <summary>
-            Initialize a new instance of the WorkspaceCellEventArgs class.
-            </summary>
-            <param name="cell">Workspace cell associated with the event.</param>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceCellEventArgs.Cell">
-            <summary>
-            Gets the cell reference.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.CellPageNotify">
-            <summary>
-            Proxy class for receiving page notifications.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace)">
-            <summary>
-            Initialize a new instance of the CellPageNotify class.
-            </summary>
-            <param name="workspace">Reference to owning workspace.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.PageDragStart(System.Object,ComponentFactory.Krypton.Navigator.KryptonNavigator,ComponentFactory.Krypton.Navigator.PageDragCancelEventArgs)">
-            <summary>
-            Occurs when a page drag is about to begin and allows it to be cancelled.
-            </summary>
-            <param name="sender">Source of the page drag; should never be null.</param>
-            <param name="navigator">Navigator instance associated with source; can be null.</param>
-            <param name="e">Event arguments indicating list of pages being dragged.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.PageDragMove(System.Object,ComponentFactory.Krypton.Toolkit.PointEventArgs)">
-            <summary>
-            Occurs when the mouse moves during the drag operation.
-            </summary>
-            <param name="sender">Source of the page drag; can be null.</param>
-            <param name="e">Event arguments containing the new screen point of the mouse.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.PageDragEnd(System.Object,ComponentFactory.Krypton.Toolkit.PointEventArgs)">
-            <summary>
-            Occurs when drag operation completes with pages being dropped.
-            </summary>
-            <param name="sender">Source of the page drag; can be null.</param>
-            <param name="e">Event arguments containing the new screen point of the mouse.</param>
-            <returns>Drop was performed and the source can perform any removal of pages as required.</returns>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.PageDragQuit(System.Object)">
-            <summary>
-            Occurs when dragging pages has been cancelled.
-            </summary>
-            <param name="sender">Source of the page drag; can be null.</param>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.StarSize">
-            <summary>
-            A size where the width and height are in star notation.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.StarSize.#ctor">
-            <summary>
-            Initialize a new instance of the StarSize class.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.StarSize.#ctor(System.String)">
-            <summary>
-            Initialize a new instance of the StarSize class.
-            </summary>
-            <param name="starSize">Initial star sizing value.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.StarSize.ToString">
-            <summary>
-            Gets a string representing the value of the instance.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.StarSize.Value">
-            <summary>
-            Gets and sets the star notation and breaks it apart.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.StarSize.StarWidth">
-            <summary>
-            Gets the star number for the width.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.StarSize.StarHeight">
-            <summary>
-            Gets the star number for the height.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.CompactFlags">
-            <summary>
-            Specifies the compacting operations performed during layout.
-            </summary>
-        </member>
-        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.None">
-            <summary>
-            Specifies that no compacting actions take place.
-            </summary>
-        </member>
-        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.RemoveEmptyCells">
-            <summary>
-            Specifies that cells with no pages be removed.
-            </summary>
-        </member>
-        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.RemoveEmptySequences">
-            <summary>
-            Specifies that sequences with no children be removed.
-            </summary>
-        </member>
-        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.PromoteLeafs">
-            <summary>
-            Specifies that a sequence with a single child replace the sequence with the child itself.
-            </summary>
-        </member>
-        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.AtLeastOneVisibleCell">
-            <summary>
-            Specifies that there should be at least one visible cell in the workspace and creates one if none are present.
-            </summary>
-        </member>
-        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.All">
-            <summary>
-            Specifies that all compacting flags be applied.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.StarNumber">
-            <summary>
-            Handle a star number which consists of a number with optional asterisk at the end.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.StarNumber.#ctor">
-            <summary>
-            Initialize a new instance of the StarNumber class.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.StarNumber.#ctor(System.String)">
-            <summary>
-            Initialize a new instance of the StarNumber class.
-            </summary>
-            <param name="value">Initial value to process.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.StarNumber.ToString">
-            <summary>
-            Gets a string representing the value of the instance.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.StarNumber.Value">
-            <summary>
-            Gets and sets the star notation and breaks it apart.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.StarNumber.UsingStar">
-            <summary>
-            Gets a value indicating if stars are being specified.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.StarNumber.FixedSize">
-            <summary>
-            Gets the fixed size value.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.StarNumber.StarSize">
-            <summary>
-            Gets the star size value.
             </summary>
         </member>
         <member name="T:ComponentFactory.Krypton.Workspace.LicenseInstallForm">
@@ -2508,338 +2649,232 @@
             the PC clock backwards 
             </summary>
         </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.WorkspaceMenus">
+        <member name="T:ComponentFactory.Krypton.Workspace.CellPageNotify">
             <summary>
-            Storage for workspace context menu for pages.
+            Proxy class for receiving page notifications.
             </summary>
         </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.WorkspacePageMenuBase">
+        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace)">
             <summary>
-            Storage for workspace context menu for pages.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspacePageMenuBase.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace)">
-            <summary>
-            Initialize a new instance of the WorkspacePageMenuBase class.
+            Initialize a new instance of the CellPageNotify class.
             </summary>
             <param name="workspace">Reference to owning workspace.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace)">
+        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.PageDragStart(System.Object,ComponentFactory.Krypton.Navigator.KryptonNavigator,ComponentFactory.Krypton.Navigator.PageDragCancelEventArgs)">
             <summary>
-            Initialize a new instance of the WorkspaceMenus class.
+            Occurs when a page drag is about to begin and allows it to be cancelled.
+            </summary>
+            <param name="sender">Source of the page drag; should never be null.</param>
+            <param name="navigator">Navigator instance associated with source; can be null.</param>
+            <param name="e">Event arguments indicating list of pages being dragged.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.PageDragMove(System.Object,ComponentFactory.Krypton.Toolkit.PointEventArgs)">
+            <summary>
+            Occurs when the mouse moves during the drag operation.
+            </summary>
+            <param name="sender">Source of the page drag; can be null.</param>
+            <param name="e">Event arguments containing the new screen point of the mouse.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.PageDragEnd(System.Object,ComponentFactory.Krypton.Toolkit.PointEventArgs)">
+            <summary>
+            Occurs when drag operation completes with pages being dropped.
+            </summary>
+            <param name="sender">Source of the page drag; can be null.</param>
+            <param name="e">Event arguments containing the new screen point of the mouse.</param>
+            <returns>Drop was performed and the source can perform any removal of pages as required.</returns>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.CellPageNotify.PageDragQuit(System.Object)">
+            <summary>
+            Occurs when dragging pages has been cancelled.
+            </summary>
+            <param name="sender">Source of the page drag; can be null.</param>
+        </member>
+        <member name="T:ComponentFactory.Krypton.Workspace.CompactFlags">
+            <summary>
+            Specifies the compacting operations performed during layout.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextClose">
+        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.None">
             <summary>
-            Resets the TextClose property to its default value.
+            Specifies that no compacting actions take place.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextCloseAllButThis">
+        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.RemoveEmptyCells">
             <summary>
-            Resets the TextCloseAllButThis property to its default value.
+            Specifies that cells with no pages be removed.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextMoveNext">
+        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.RemoveEmptySequences">
             <summary>
-            Resets the TextMoveNext property to its default value.
+            Specifies that sequences with no children be removed.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextMovePrevious">
+        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.PromoteLeafs">
             <summary>
-            Resets the TextMovePrevious property to its default value.
+            Specifies that a sequence with a single child replace the sequence with the child itself.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextSplitVertical">
+        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.AtLeastOneVisibleCell">
             <summary>
-            Resets the TextSplitVertical property to its default value.
+            Specifies that there should be at least one visible cell in the workspace and creates one if none are present.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextSplitHorizontal">
+        <member name="F:ComponentFactory.Krypton.Workspace.CompactFlags.All">
             <summary>
-            Resets the TextSplitHorizontal property to its default value.
+            Specifies that all compacting flags be applied.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextRebalance">
+        <member name="T:ComponentFactory.Krypton.Workspace.PageSavingEventArgs">
             <summary>
-            Resets the TextRebalance property to its default value.
+            Event data for persisting extra data for a workspace cell page.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextMaximize">
+        <member name="M:ComponentFactory.Krypton.Workspace.PageSavingEventArgs.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Navigator.KryptonPage,System.Xml.XmlWriter)">
             <summary>
-            Resets the TextMaximize property to its default value.
+            Initialize a new instance of the PageSavingEventArgs class.
+            </summary>
+            <param name="workspace">Reference to owning workspace control.</param>
+            <param name="page">Reference to owning workspace cell page.</param>
+            <param name="xmlWriter">Xml writer for persisting custom data.</param>
+        </member>
+        <member name="P:ComponentFactory.Krypton.Workspace.PageSavingEventArgs.Page">
+            <summary>
+            Gets the workspace cell page reference.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetTextRestore">
+        <member name="T:ComponentFactory.Krypton.Workspace.CellDragCancelEventArgs">
             <summary>
-            Resets the TextRestore property to its default value.
+            Details for an cancellable event that provides pages and cell associated with a page dragging event.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutClose">
+        <member name="M:ComponentFactory.Krypton.Workspace.CellDragCancelEventArgs.#ctor(System.Drawing.Point,System.Drawing.Point,System.Windows.Forms.Control,ComponentFactory.Krypton.Navigator.KryptonPage[],ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell)">
             <summary>
-            Decide if the shortcut for closing the current page.
+            Initialize a new instance of the CellDragCancelEventArgs class.
             </summary>
-            <returns>True if value should be serialized.</returns>
+            <param name="screenPoint">Screen point of the mouse.</param>
+            <param name="screenOffset">Screen offset of the mouse to the source element.</param>
+            <param name="c">Control that started the drag operation.</param>
+            <param name="pages">Array of event associated pages.</param>
+            <param name="cell">Workspace cell associated with pages.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutClose">
+        <member name="M:ComponentFactory.Krypton.Workspace.CellDragCancelEventArgs.#ctor(ComponentFactory.Krypton.Navigator.PageDragCancelEventArgs,ComponentFactory.Krypton.Workspace.KryptonWorkspaceCell)">
             <summary>
-            Resets the ShortcutClose property to its default value.
+            Initialize a new instance of the CellDragCancelEventArgs class.
             </summary>
+            <param name="e">Event to upgrade to this event.</param>
+            <param name="cell">Workspace cell associated with pages.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutCloseAllButThis">
+        <member name="P:ComponentFactory.Krypton.Workspace.CellDragCancelEventArgs.Cell">
             <summary>
-            Decide if the shortcut for 'close all but this' page.
-            </summary>
-            <returns>True if value should be serialized.</returns>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutCloseAllButThis">
-            <summary>
-            Resets the ShortcutCloseAllButThis property to its default value.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutMoveNext">
-            <summary>
-            Decide if the shortcut for moving the current page to the next cell.
-            </summary>
-            <returns>True if value should be serialized.</returns>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutMoveNext">
-            <summary>
-            Resets the ShortcutMoveNext property to its default value.
+            Gets access to associated workspace cell.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutMovePrevious">
+        <member name="T:ComponentFactory.Krypton.Workspace.RecreateLoadingPageEventArgs">
             <summary>
-            Decide if the shortcut for moving the current page to the previous cell.
-            </summary>
-            <returns>True if value should be serialized.</returns>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutMovePrevious">
-            <summary>
-            Resets the ShortcutMovePrevious property to its default value.
+            Event arguments for events that need to request a KryptonPage from a provided unique name.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutSplitVertical">
+        <member name="M:ComponentFactory.Krypton.Workspace.RecreateLoadingPageEventArgs.#ctor(System.String)">
             <summary>
-            Decide if the shortcut for splitting the current page into a vertical aligned page.
+            Initialize a new instance of the RecreateLoadingPageEventArgs class.
             </summary>
-            <returns>True if value should be serialized.</returns>
+            <param name="uniqueName">Unique name of the page that needs creating.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutSplitVertical">
+        <member name="P:ComponentFactory.Krypton.Workspace.RecreateLoadingPageEventArgs.Page">
             <summary>
-            Resets the ShortcutSplitVertical property to its default value.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutSplitHorizontal">
-            <summary>
-            Decide if the shortcut for splitting the current page into a horizontal aligned page.
-            </summary>
-            <returns>True if value should be serialized.</returns>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutSplitHorizontal">
-            <summary>
-            Resets the ShortcutSplitHorizontal property to its default value.
+            Gets and sets the page to be used for the requested unique name.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutRebalance">
+        <member name="P:ComponentFactory.Krypton.Workspace.RecreateLoadingPageEventArgs.UniqueName">
             <summary>
-            Decide if the shortcut for rebalancing the layout.
-            </summary>
-            <returns>True if value should be serialized.</returns>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutRebalance">
-            <summary>
-            Resets the ShortcutRebalance property to its default value.
+            Gets the unique name of the page requested to be recreated.
             </summary>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShouldSerializeShortcutMaximizeRestore">
+        <member name="T:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection">
             <summary>
-            Decide if the shortcut for maximizing/restoring the layout.
-            </summary>
-            <returns>True if value should be serialized.</returns>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ResetShortcutMaximizeRestore">
-            <summary>
-            Resets the ShortcutMaximizeRestore property to its default value.
+            Collection of workspace items.
             </summary>
         </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.IsDefault">
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspaceSequence)">
             <summary>
-            Gets a value indicating if all values are default.
+            Initialize a new instance of the KryptonWorkspaceCollection class.
             </summary>
+            <param name="sequence">Reference to the owning sequence.</param>
         </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextClose">
-            <summary>
-            Gets and sets the text to use for the close context menu item.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextCloseAllButThis">
-            <summary>
-            Gets and sets the text to use for the 'close all but this' context menu item.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextMoveNext">
-            <summary>
-            Gets and sets the text to use for the move next context menu item.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextMovePrevious">
-            <summary>
-            Gets and sets the text to use for the move previous context menu item.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextSplitVertical">
-            <summary>
-            Gets and sets the text to use for the split vertical context menu item.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextSplitHorizontal">
-            <summary>
-            Gets and sets the text to use for the split horizontal context menu item.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextRebalance">
-            <summary>
-            Gets and sets the text to use for the rebalance context menu item.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextMaximize">
-            <summary>
-            Gets and sets the text to use for the maximize context menu item.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.TextRestore">
-            <summary>
-            Gets and sets the text to use for the restore context menu item.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutClose">
-            <summary>
-            Gets and sets the shortcut for closing the current page.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutCloseAllButThis">
-            <summary>
-            Gets and sets the shortcut for 'close all but this' page.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutMoveNext">
-            <summary>
-            Gets and sets the shortcut for moving the current page to the next cell.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutMovePrevious">
-            <summary>
-            Gets and sets the shortcut for moving the current page to the previous cell.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutSplitVertical">
-            <summary>
-            Gets and sets the shortcut for splitting the current page into a vertical aligned page.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutSplitHorizontal">
-            <summary>
-            Gets and sets the shortcut for splitting the current page into a horizontal aligned page.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutRebalance">
-            <summary>
-            Gets and sets the shortcut for rebalancing the layout.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShortcutMaximizeRestore">
-            <summary>
-            Gets and sets the shortcut for maximizing/restoring the layout.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.WorkspaceMenus.ShowContextMenu">
-            <summary>
-            Gets and sets if a workspace context menu is shown on tab right clicking.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.Properties.Resources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.Properties.Resources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="T:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator">
-            <summary>
-            Workspace specific separator that works relative to a specific workspace item.
-            </summary>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.#ctor(ComponentFactory.Krypton.Workspace.KryptonWorkspace,ComponentFactory.Krypton.Workspace.IWorkspaceItem,System.Windows.Forms.Orientation)">
-            <summary>
-            Initialize a new instance of the ViewDrawWorkspaceSeparator class.
-            </summary>
-            <param name="workspace">Associated workspace instance.</param>
-            <param name="workspaceItem">Associated workspace item.</param>
-            <param name="orientation">Visual orientation of the content.</param>
-        </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.ToString">
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.ToString">
             <summary>
             Obtains the String representation of this instance.
             </summary>
             <returns>User readable name of the instance.</returns>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorMoving(System.Drawing.Point,System.Drawing.Point)">
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnInserted(ComponentFactory.Krypton.Toolkit.TypedCollectionEventArgs{System.ComponentModel.Component})">
             <summary>
-            Indicates the separator is moving.
+            Raises the Inserted event.
             </summary>
-            <param name="mouse">Current mouse position in client area.</param>
-            <param name="splitter">Current position of the splitter.</param>
-            <returns>True if movement should be cancelled; otherwise false.</returns>
+            <param name="e">A TypedCollectionEventArgs instance containing event data.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorMoved(System.Drawing.Point,System.Drawing.Point)">
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnRemoved(ComponentFactory.Krypton.Toolkit.TypedCollectionEventArgs{System.ComponentModel.Component})">
             <summary>
-            Indicates the separator has finished and been moved.
+            Raises the Removed event.
             </summary>
-            <param name="mouse">Current mouse position in client area.</param>
-            <param name="splitter">Current position of the splitter.</param>
+            <param name="e">A TypedCollectionEventArgs instance containing event data.</param>
         </member>
-        <member name="M:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorNotMoved">
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnClearing(System.EventArgs)">
             <summary>
-            Indicates the separator has not been moved.
+            Raises the Clearing event.
+            </summary>
+            <param name="e">An EventArgs instance containing event data.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnCleared(System.EventArgs)">
+            <summary>
+            Raises the Cleared event.
+            </summary>
+            <param name="e">An EventArgs instance containing event data.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnChildPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Handle a change in a child item.
+            </summary>
+            <param name="sender">Source of the event.</param>
+            <param name="e">Event arguments associated with the event.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnChildMaximizeRestoreClicked(System.Object,System.EventArgs)">
+            <summary>
+            Handle a maximize/restore request from a child item.
+            </summary>
+            <param name="sender">Source of the event.</param>
+            <param name="e">Event arguments associated with the event.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnPropertyChanged(System.String)">
+            <summary>
+            Raises the PropertyChanged event.
+            </summary>
+            <param name="property">Name of the property that has changed.</param>
+        </member>
+        <member name="M:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the PropertyChanged event.
+            </summary>
+            <param name="e">Event arguments associated with the event.</param>
+        </member>
+        <member name="E:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.PropertyChanged">
+            <summary>
+            Occurs after a change has occured to the collection.
             </summary>
         </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.WorkspaceItem">
+        <member name="E:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.MaximizeRestoreClicked">
             <summary>
-            Gets the associated workspace item instance.
+            Occurs when the user clicks the maximize/restore button.
             </summary>
         </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorControl">
+        <member name="P:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.RestrictTypes">
             <summary>
-            Gets the top level control of the source.
+            Gets an array of types that the collection is restricted to contain.
             </summary>
         </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorOrientation">
+        <member name="P:ComponentFactory.Krypton.Workspace.KryptonWorkspaceCollection.ContainsVisibleCell">
             <summary>
-            Gets the orientation of the separator.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorCanMove">
-            <summary>
-            Can the separator be moved by the user.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorIncrements">
-            <summary>
-            Gets the amount the splitter can be incremented.
-            </summary>
-        </member>
-        <member name="P:ComponentFactory.Krypton.Workspace.ViewDrawWorkspaceSeparator.SeparatorMoveBox">
-            <summary>
-            Gets the box representing the minimum and maximum allowed splitter movement.
+            Gets a value indicating if the collection or child collections contains a cell instance.
             </summary>
         </member>
     </members>
